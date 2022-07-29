@@ -1,0 +1,21 @@
+{{!-- card for post --}}
+<div class="row ">
+  <div class="col">
+    <div class="card mt-3 mb-3 ">
+      {{!-- title or header of carder --}}
+      <div class="card-header">
+        <h3>{{title}}</h3>
+        {{!-- card content --}}
+        <div class="card-body">
+          {{post_content}}
+          {{!-- card footer --}}
+          <div class="card-footer">
+            {{user.username}} |
+            {{format_date created_at}} |
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

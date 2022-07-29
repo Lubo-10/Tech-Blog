@@ -1,0 +1,32 @@
+
+{{!-- article to hold ability to edit, delete, comment post --}}
+<section>
+    <div class="mt-5 mx-3"> 
+      {{!-- link to go back to dashboard wrapped in a button --}}
+        <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+    <div class="container">
+        <div class="row">
+    {{!-- edit post --}}
+    <h2 class="mt-3 mb-3">Edit Post:</h2>
+    <form class="edit-post-form">
+        <div class="row px-3 mb-3">
+            <h6>Title of your post:</h6>
+            <input class="input" type="text" id="post-title" name="post-title" value="{{post.title}}" required />
+            <h6 class="mt-3">Blog post content:</h6>
+            <textarea class="textarea" id="post-content" name="post-content" />{{post.post_content}}</textarea>
+        Created on: {{format_date post.created_at}}
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Update Post</button>
+        <button type="button" class="btn btn-danger mt-3 delete-post-btn">Delete Post</button>
+        <div class="mx-3 mt-3 mb-3">
+            <h5 class="text-decoration-underline text-muted ">Comments</h5>
+        {{> comments post.comments }}
+        </div>
+    </form>
+    </div>
+    </div>
+</section>
+
+<script src="/js/edit-post.js"></script>
+<script src="/js/delete-post.js"></script>

@@ -1,0 +1,24 @@
+{{!-- single post for logged in user --}}
+{{> post-info post }}
+
+{{!-- if logged in can comment --}}
+{{#if loggedIn }}
+<section class="mt-5 border-bottom border-dark">
+    <h6>Add Comment:</h6>
+    <form class="comment-form">
+        {{!-- <div class="form-group"> --}}
+            <div class="row px-5 mb-5">
+                <textarea class="form-control" name="comment-body"></textarea>
+                <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
+            </div>
+        {{!-- </div> --}}
+    </form>
+</section>
+{{/if}} 
+
+{{> comments post.comments }}
+
+{{!-- if logged --}}
+{{#if loggedIn }}
+<script src="/js/comment.js"></script>
+{{/if}}
